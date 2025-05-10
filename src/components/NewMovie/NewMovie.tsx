@@ -16,7 +16,7 @@ export const NewMovie = ({ onAdd }: Props) => {
   const [imdbUrl, setImdbUrl] = useState('');
   const [imdbId, setImdbId] = useState('');
 
-  const buttonDisable: boolean = Boolean(
+  const buttonDisable: boolean = !Boolean(
     title.trim() && imgUrl.trim() && imdbUrl.trim() && imdbId.trim(),
   );
 
@@ -89,7 +89,7 @@ export const NewMovie = ({ onAdd }: Props) => {
             type="submit"
             data-cy="submit-button"
             className="button is-link"
-            disabled={!buttonDisable}
+            disabled={buttonDisable}
           >
             Add
           </button>
